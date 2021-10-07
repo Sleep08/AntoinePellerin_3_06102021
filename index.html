@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6abcd90101.js" crossorigin="anonymous"></script>
   </head>
 <body>
   <header>  
@@ -21,8 +22,8 @@
     </div>
   </header>
   <!-- Section Fonctionnement -->
-    <section>
-      <div class="description">
+    <section class="description">
+      <div class="description__contain">
         <div class="description__title">
           <p>Réservez le menu qui vous convient</p>
         </div>
@@ -35,11 +36,129 @@
       </div>
     </section>
   <!-- Section Fonctionnement -->
-    <section>
+    <section class="fonctionnement">
+        <div class="fonctionnement__title">
+          <p>Fonctionnement</p>
+        </div>
+        <div class="fonctionnement__menu">
+          <div class="explications">
+            <div class="explications__numero">
+            1
+            </div>
+            <div class="explications__logo">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <div class="explications__text">
+            Choisissez un restaurant
+            </div>
+          </div>
+          <div class="explications">
+            <div class="explications__numero">
+            2
+            </div>
+            <div class="explications__logo">
+            <i class="fa-solid fa-list"></i>
+            </div>
+            <div class="explications__text">
+            Composez votre menu
+            </div>
+          </div>
+          <div class="explications explications--degustez">
+            <div class="explications__numero">
+            3
+            </div>
+            <div class="explications__logo explications__logo--degustez">
+            <i class="fa-solid fa-store"></i>
+            </div>
+            <div class="explications__text">
+            Dégustez au restaurant
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   <!-- Section Restaurants -->
-    <section>
+    <section class="restaurants">
+      <div class="restaurants__title">
+        Restaurants
+      </div>
+      <div class="restaurants__list">
+        <figure class="choix">
+          <div class="choix__img">
+            <img src="/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La Palette du goût">
+          </div>
+          <figcaption class="choix__legende">
+            <div class="text">
+              <p class="text__titre">La palette du goût</p>
+              <p class="text__place">Ménilmontant</p>
+            </div>
+            <div class="heart">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="choix">
+          <div class="choix__img">
+            <img src="/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La note enchantée">
+          </div>
+          <figcaption class="choix__legende">
+            <div class="text">
+              <p class="text__titre">La note enchantée</p>
+              <p class="text__place">Charonne</p>
+            </div>
+            <div class="heart">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="choix">
+          <div class="choix__img">
+            <img src="/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="A la française">
+          </div>
+          <figcaption class="choix__legende">
+            <div class="text">
+              <p class="text__titre">A la française</p>
+              <p class="text__place">Cité Rouge</p>
+            </div>
+            <div class="heart">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="choix">
+          <div class="choix__img">
+            <img src="/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Le délice des sens">
+          </div>
+          <figcaption class="choix__legende">
+            <div class="text">
+              <p class="text__titre">Le délice des sens</p>
+              <p class="text__place">Folie-Méricourt</p>
+            </div>
+            <div class="heart">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
     </section>
-<footer></footer>
+<footer>
+  <div class="classfooter">
+    <div class="classfooter__logo">
+      <img src="#" alt="ohmyfood">
+    </div>
+    <ul class="classfooter__list">
+      <li class="classfooter__list__li">
+        <i class="fa-solid fa-utensils"></i>
+        <p>Proposer un restaurant</p>
+      </li>
+      <li class="classfooter__list__li">
+        <i class="fa-solid fa-handshake-angle"></i>
+        <p>Devenir partenaire</p>
+      </li>
+      <li class="classfooter__list__li">Mentions légales</li>
+      <li class="classfooter__list__li">Contact</li>
+    </ul>
+  </div>
+</footer>
 </body>
 </html>
