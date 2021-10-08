@@ -129,6 +129,12 @@ body {
   background-color: white;
   border-radius: 20px;
 }
+.choix__img img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  border-radius: 20px 20px 0px 0px;
+}
 .choix__legende {
   display: flex;
   justify-content: space-between;
@@ -217,7 +223,35 @@ footer {
   }
 
   .choix {
+    font-size: 2em;
     width: 90%;
+    height: 700px;
+    border-radius: 0px 0px 50px 50px;
+  }
+  .choix img {
+    height: 500px;
+    border-radius: 50px 50px 0px 0px;
+  }
+
+  /* FONCTIONNEMENT */
+  .explications {
+    font-size: 2.2em;
+    height: 220px;
+    border-radius: 75px;
+  }
+  .explications__numero {
+    width: 65px;
+    height: 60px;
+    margin-top: 70px;
+    padding-top: 10px;
+  }
+  .explications__logo {
+    margin-top: 80px;
+    margin-left: 30px;
+  }
+  .explications__text {
+    margin-top: 80px;
+    margin-left: 45px;
   }
 }
 
