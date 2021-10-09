@@ -18,10 +18,24 @@ body {
 .header__barre {
   width: 400px;
   height: 45px;
-  border: 2px solid black;
+  border: 2px solid grey;
+  border-radius: 40px;
   background-color: #eaeaea;
   text-align: center;
   font-weight: bold;
+  color: grey;
+}
+.header__banniere {
+  background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-size: 100% auto;
+  object-fit: cover;
+  height: 500px;
+}
+
+.fa-location-dot {
+  position: relative;
+  right: 300px;
+  color: grey;
 }
 
 /*DESCRIPTION*/
@@ -145,20 +159,33 @@ body {
 .text__titre {
   font-weight: bold;
 }
+.text__place {
+  margin-top: -15px;
+}
 
 .heart {
   font-size: 2em;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 
 /*FOOTER*/
 footer {
   background-color: #353535;
+  height: auto;
 }
 
 .classfooter {
   color: white;
   padding-left: 30px;
+}
+.classfooter__logo {
+  padding-top: 20px;
+  padding-left: 30px;
+}
+.classfooter__logo img {
+  width: 150px;
+  height: 25px;
+  filter: invert(100%);
 }
 .classfooter__list {
   list-style-type: none;
@@ -167,10 +194,72 @@ footer {
   display: flex;
   justify-content: flex-start;
 }
+.classfooter__list__li--logo {
+  margin-bottom: -15px;
+  padding-top: -15px;
+}
 
 .fa-handshake-angle, .fa-utensils {
   position: relative;
   padding-top: 17px;
+  padding-right: 10px;
+}
+
+/* PAGE MENU */
+.menu {
+  background-color: #f6f6f6;
+}
+.menu__title {
+  padding-top: 25px;
+  padding-left: 15px;
+  font-size: 1.5em;
+}
+.menu__choix {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+
+.plat {
+  background-color: white;
+  border-radius: 20px;
+  width: 400px;
+  height: 75px;
+  padding-left: 15px;
+  padding-right: 25px;
+}
+.plat__title {
+  font-weight: bold;
+}
+.plat__descriptif {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -15px;
+}
+.plat__descriptif__tarif {
+  font-weight: bold;
+}
+
+.intitule {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 400px;
+  border-radius: 50px 50px 0px 0px;
+}
+.intitule__nom {
+  font-size: 2em;
+  font-weight: bold;
+  margin-left: 45px;
+}
+.intitule__heart {
+  margin-left: 30%;
+}
+
+.fa-heart--menu {
+  font-size: 2em;
+  padding-top: 30px;
 }
 
 /*MIXINS*/
@@ -185,6 +274,13 @@ footer {
     height: 150px;
     border: none;
     font-size: 3em;
+    border-radius: 0px;
+    margin-bottom: -50px;
+  }
+
+  .fa-location-dot {
+    font-size: 3em;
+    top: -55px;
   }
 
   .description {
@@ -211,6 +307,7 @@ footer {
   .fonctionnement__menu {
     flex-direction: column;
     align-items: center;
+    margin-left: 15px;
   }
 
   .explications {
@@ -223,7 +320,7 @@ footer {
   }
 
   .choix {
-    font-size: 2em;
+    font-size: 2.8em;
     width: 90%;
     height: 700px;
     border-radius: 0px 0px 50px 50px;
@@ -231,6 +328,20 @@ footer {
   .choix img {
     height: 500px;
     border-radius: 50px 50px 0px 0px;
+  }
+
+  .text {
+    padding-left: 15px;
+  }
+  .text__titre {
+    font-weight: bold;
+  }
+  .text__place {
+    margin-top: -35px;
+  }
+
+  .heart {
+    padding-top: 40px;
   }
 
   /* FONCTIONNEMENT */
@@ -243,7 +354,7 @@ footer {
     width: 65px;
     height: 60px;
     margin-top: 70px;
-    padding-top: 10px;
+    padding-top: 15px;
   }
   .explications__logo {
     margin-top: 80px;
@@ -252,6 +363,57 @@ footer {
   .explications__text {
     margin-top: 80px;
     margin-left: 45px;
+    font-weight: bold;
+  }
+
+  .classfooter {
+    font-size: 2.8em;
+  }
+  .classfooter img {
+    padding-top: 40px;
+    width: 320px;
+    height: 50px;
+  }
+  .classfooter__list {
+    padding-bottom: 50px;
+    margin-bottom: -50px;
+  }
+  .classfooter__list__li--logo {
+    margin-bottom: -30px;
+  }
+
+  .fa-handshake-angle, .fa-utensils {
+    position: relative;
+    padding-top: 40px;
+    padding-right: 25px;
+  }
+
+  /* PAGE MENU */
+  .intitule {
+    font-size: 2.5em;
+  }
+
+  .fa-heart--menu {
+    margin-top: 45px;
+  }
+
+  .menu__title {
+    font-size: 3em;
+    padding-left: 40px;
+    padding-top: 100px;
+  }
+  .menu__choix {
+    padding-left: 40px;
+  }
+
+  .plat {
+    width: 90%;
+    margin-top: 35px;
+    height: auto;
+    font-size: 3em;
+  }
+  .plat__descriptif {
+    margin-top: -50px;
   }
 }
 
