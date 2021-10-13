@@ -284,26 +284,39 @@ footer {
   }
 
   .description {
-    margin-top: 0px;
-  }
-  .description__contain {
-    width: 88%;
-    padding-left: 7%;
+    background-color: #f6f6f6;
+    text-align: center;
+    margin-top: -20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   .description__title {
-    font-size: 4em;
+    font-size: 3.5em;
   }
-  .description__title--button {
-    height: 70px;
-    width: 300px;
+  .description__text {
+    font-size: 2em;
+  }
+  .description__text--button {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    height: 125px;
+    width: 550px;
+    font-size: 2.5em;
     background: linear-gradient(50deg, #e571da, #a15adc);
     color: white;
     border: none;
-    border-radius: 50px;
+    border-radius: 75px;
     padding: 10px 20px 10px 20px;
     cursor: pointer;
   }
 
+  .fonctionnement {
+    margin-bottom: 100px;
+  }
+  .fonctionnement__title {
+    padding-top: 75px;
+    font-size: 3.5em;
+  }
   .fonctionnement__menu {
     flex-direction: column;
     align-items: center;
@@ -314,6 +327,13 @@ footer {
     width: 90%;
   }
 
+  .restaurants {
+    padding-bottom: 150px;
+  }
+  .restaurants__title {
+    font-size: 3.5em;
+    margin-top: 70px;
+  }
   .restaurants__list {
     flex-direction: column;
     align-items: center;
@@ -341,7 +361,12 @@ footer {
   }
 
   .heart {
-    padding-top: 40px;
+    padding-top: 35px;
+    margin-right: 35px;
+  }
+
+  .fa-heart {
+    font-size: 0.8em;
   }
 
   /* FONCTIONNEMENT */
