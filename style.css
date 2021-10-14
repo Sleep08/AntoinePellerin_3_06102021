@@ -29,7 +29,10 @@ body {
   background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
   background-size: 100% auto;
   object-fit: cover;
-  height: 500px;
+  height: 650px;
+}
+.header a {
+  margin-top: -50px;
 }
 
 .fa-location-dot {
@@ -208,6 +211,8 @@ footer {
 /* PAGE MENU */
 .menu {
   background-color: #f6f6f6;
+  padding-top: 125px;
+  border-radius: 75px 75px 0px 0px;
 }
 .menu__title {
   padding-top: 25px;
@@ -218,19 +223,48 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-left: 15px;
+  padding-left: 150px;
+}
+
+.soulignement {
+  border-bottom: 8px solid #99e2d0;
 }
 
 .plat {
+  animation-duration: 3s;
+  animation-name: fadeInFromNone;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
   background-color: white;
   border-radius: 20px;
   width: 400px;
-  height: 75px;
+  height: 100px;
   padding-left: 15px;
   padding-right: 25px;
+  cursor: pointer;
+}
+.plat__deux {
+  visibility: hidden;
+  animation-delay: 0.5s;
+}
+.plat__trois {
+  visibility: hidden;
+  animation-delay: 1s;
 }
 .plat__title {
   font-weight: bold;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+.plat:hover {
+  width: 325px;
+  border-radius: 20px 0px 0px 20px;
+  margin-right: 0px;
+  transition: 0.5s;
+}
+.plat:hover + .valider {
+  width: 100px;
+  transition: 0.5s;
 }
 .plat__descriptif {
   display: flex;
@@ -241,12 +275,40 @@ footer {
   font-weight: bold;
 }
 
+.contain {
+  width: 440px;
+  height: 100px;
+  border-radius: 20px;
+  background-color: #99e2d0;
+  animation-duration: 3s;
+  animation-name: fadeInFromNone;
+  animation-fill-mode: forwards;
+}
+
+.valider {
+  width: 0%;
+  background-color: #99e2d0;
+  animation-timing-function: ease;
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
 .intitule {
   background-color: #f6f6f6;
   display: flex;
   justify-content: flex-start;
-  margin-top: 400px;
-  border-radius: 50px 50px 0px 0px;
+  margin-top: 550px;
+  border-radius: 80px 80px 0px 0px;
 }
 .intitule__nom {
   font-size: 2em;
@@ -260,6 +322,14 @@ footer {
 .fa-heart--menu {
   font-size: 2em;
   padding-top: 30px;
+}
+
+.fa-arrow-left {
+  font-size: 4em;
+  color: black;
+  position: relative;
+  top: 100px;
+  right: 40%;
 }
 
 /*MIXINS*/
@@ -308,6 +378,11 @@ footer {
     border-radius: 75px;
     padding: 10px 20px 10px 20px;
     cursor: pointer;
+  }
+  .description__explorer--menu {
+    text-align: center;
+    padding-bottom: 150px;
+    padding-top: 50px;
   }
 
   .fonctionnement {
@@ -419,13 +494,17 @@ footer {
   }
 
   .fa-heart--menu {
-    margin-top: 45px;
+    margin-top: 55px;
+    font-size: 2em;
   }
 
   .menu__title {
     font-size: 3em;
     padding-left: 40px;
-    padding-top: 100px;
+    padding-top: 0px;
+  }
+  .menu__title--soulignement {
+    border-bottom: 2px solid #f5edff;
   }
   .menu__choix {
     padding-left: 40px;
@@ -437,8 +516,16 @@ footer {
     height: auto;
     font-size: 3em;
   }
+  .plat:hover {
+    width: 75%;
+  }
   .plat__descriptif {
     margin-top: -50px;
+  }
+
+  .contain {
+    width: 100%;
+    height: 300px;
   }
 }
 
