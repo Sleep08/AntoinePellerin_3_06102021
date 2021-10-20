@@ -1,0 +1,460 @@
+/*VARIABLES*/
+$font-naviguation: #eaeaea;
+$main-background: #f6f6f6;
+$footer-background: #353535;
+$bouton-basic: #e571da;
+$bouton-degrade: #a15adc;
+$deguster-background: #f5edff;
+$apparition-menu: #99e2d0; 
+
+/*MIXINS*/
+@mixin title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+@mixin description {
+    font-size: 1.5em;
+}
+
+@mixin degrade {
+    background: linear-gradient(50deg, $bouton-basic, $bouton-degrade);
+}
+
+@mixin button {
+    height: 70px;
+    width: 300px;
+    @include degrade();
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    &:hover{
+        background: lighten($bouton-basic, 5%);
+    }
+}
+
+/*GENERAL*/
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+    max-width: 90%;
+}
+
+/* HEADER */
+.header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    &__logo{
+        left: 60px;
+    }
+    &__barre{
+        width: 400px;
+        height: 45px;
+        border: 2px solid grey;
+        border-radius: 40px;
+        background-color: $font-naviguation;
+        text-align: center;
+        font-weight: bold;
+    }
+    &__banniere{
+        background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+        border-radius: 50px;
+        background-size: 100% auto;
+        object-fit: cover;
+        height: 650px;
+        &--enchantee{
+            background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/stil-u2Lp8tXIcjw-unsplash.jpg")
+        }
+        &--delice{
+            background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg")
+        }
+        &--palette{
+            background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg")
+        }
+    }
+    a {
+        margin-top: -50px;
+    }
+}
+.fa-location-dot{
+    position: relative;
+    right: 300px;
+}
+
+/*DESCRIPTION*/
+
+.description{
+    background-color: $main-background;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &__title{
+        @include title;
+    }
+    &__text{
+        @include description;
+        &--button{
+            @include button();
+        }
+    }
+    &__explorer{
+        &--menu{
+            text-align: center;
+            margin-top: 50px;
+            padding-bottom: 50px;
+        }
+    }
+}
+
+/*SECTION FONCTIONNEMENT*/
+.fonctionnement{
+    padding-bottom: 50px;
+    &__title{
+        @include title;
+        padding-left: 30px;
+    }
+    &__menu{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+}
+
+.explications{
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    background-color: $main-background;
+    width: 400px;
+    height: 75px;
+    border-radius: 25px;
+    transition: background-color 1s;
+    &--degustez{
+        background-color: $deguster-background;
+    }
+    &__numero{
+        color: white;
+        background-color: $bouton-degrade;
+        border-radius: 50px;
+        width: 30px;
+        height: 25px;
+        margin-top: 22px;
+        margin-left: -15px;
+        padding-top: 5px;
+    }
+    &__logo{
+        margin-top: 25px;
+        padding-left: 25px;
+        color: grey;
+        &--degustez{
+            color: $bouton-degrade;
+        }
+    }
+    &__text{
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-left: 25px;
+        margin-top: 25px;
+    }
+}
+
+.fa-store, .fa-mobile-screen-button, .fa-list{
+    font-size: 1.5em;
+}
+
+/*SECTION RESTAURANTS*/
+
+.restaurants{
+    background-color: $main-background;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    &__title{
+        @include title();
+        padding-left: 30px;
+        padding-bottom: 15px;
+    }
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+.choix{
+    width: 400px;
+    background-color: white;
+    border-radius: 20px;
+    &__img img{
+        object-fit: cover;
+        width: 100%;
+        height: 200px;
+        border-radius: 20px 20px 0px 0px;
+    }
+    &__legende{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 15px;
+        padding-right: 25px;
+        }
+    }
+
+.text{
+    &__titre{
+        font-weight: bold;
+    }
+    &__place{
+        margin-top: -15px;
+    }
+}
+
+.heart{
+    font-size: 2em;
+    cursor: pointer;
+    padding-top: 15px;
+        &:hover { 
+            display: none;
+        + .heart__degrade {
+            padding-top: 15px;
+            display: block;
+            .fa-heart{
+                animation-duration: 1s;
+                font-size: 2em;
+                color: $bouton-degrade;
+            }
+        }
+    }
+}
+
+.fa-heart{
+    color: black;
+}
+
+.heart__degrade{
+    display: none;
+}
+
+.nouveau{
+    margin-top: -250px;
+    margin-left: 300px;
+    background-color: $apparition-menu;
+    position: absolute;
+    padding: 5px 10px 5px 10px;
+    font-weight: bold;
+    color: #008766;
+}
+
+/*FOOTER*/
+
+footer{
+    background-color: $footer-background;
+    border-radius: 0px 0px 50px 50px;
+    height: auto;
+}
+
+.classfooter{
+    color: white;
+    padding-left: 30px;
+    &__logo{
+        padding-top: 20px;
+        padding-left: 30px;
+        img{
+        width: 150px;
+        height: 25px;
+        filter: invert(100%);
+        }
+    }
+    &__list{
+        list-style-type: none;
+        &__li{
+            display: flex;
+            justify-content: flex-start;
+            &--logo{
+                margin-bottom: -15px;
+                padding-top: -15px;
+            }
+        }
+    }
+}
+
+.fa-handshake-angle, .fa-utensils{
+    position: relative;
+    padding-top: 17px;
+    padding-right: 10px;
+}
+
+/* PAGE MENU */
+
+.menu{
+    background-color: $main-background;
+    padding-top: 20px;
+    &__title{
+        padding-top: 25px;
+        padding-left: 15px;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    &__choix{
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 90%;
+        margin-left: 60px;
+    }
+}
+
+.soulignement{
+    border-bottom: 8px solid $apparition-menu;    
+}
+
+.plat {
+    animation-duration: 3s;
+    animation-name: fadeInFromNone;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    background-color: white;
+    border-radius: 20px;
+    width: 440px;
+    max-height: 250px;
+    padding-left: 15px;
+    padding-right: 25px;
+    cursor: pointer;
+    &__deux{
+        visibility: hidden;
+        animation-delay: 0.5s;
+    }
+    &__trois{
+        visibility: hidden;
+        animation-delay: 1s;
+    }
+    &__quatre{
+        visibility: hidden;
+        animation-delay: 1.5s;
+    }
+    &__title{
+        font-weight: bold;
+        padding-bottom: 15px;
+        padding-top: 10px;
+        text-overflow: ellipsis;
+    }
+    &:hover{
+        width: 300px;
+        border-radius: 20px 0px 0px 20px;
+        margin-right: 0px;
+        transition: 0.5s;
+    }
+    &__descriptif{
+        display: flex;
+        justify-content: space-between;
+        margin-top: -15px;
+        overflow: hidden;
+        &__precisions{
+            p{
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+        &__tarif{
+            font-weight: bold;
+        }
+
+    }
+}
+
+.contain{
+    width: 440px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: $apparition-menu;
+    animation-duration: 3s;
+    animation-name: fadeInFromNone;
+    animation-fill-mode: forwards;
+    &:hover + .check{
+        visibility: visible;
+        transition: 0.5s;
+        margin-left: -140px;
+        display: block;
+        text-align: left;
+        margin-top: 30px;
+        .fa-circle-check{
+        animation: rotate 0.5s;
+        }
+    }
+}
+
+.check{
+    margin-left: -50px;
+    margin-top: 30px;
+    visibility: hidden;
+    font-size: 2em;
+    position: relative;
+    text-align: right;
+    }
+
+.fa-circle-check{
+    color: white;
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        opacity: 0;
+    }
+    1% {
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.intitule{
+    background-color: $main-background;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 550px;
+    border-radius: 80px 80px 0px 0px;
+    &__nom{
+        @include title();
+        font-family: 'Shrikhand', cursive;
+        margin-left: 25%;
+        &--long{
+            margin-left: 35px;
+        }
+    }
+    &__heart{
+        margin-left: 30%;
+        &--long{
+            margin-left: 15%;
+        }
+    }
+}
+
+.fa-heart--menu{
+    font-size: 2em;
+    padding-top: 30px;
+}
+
+.fa-arrow-left{
+    font-size: 4em;
+    color: black;
+    position: relative;
+    top: 70px;
+    right: 40%;
+}
+
+@import 'media_queries';
