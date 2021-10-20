@@ -3,7 +3,8 @@
 /*GENERAL*/
 body {
   font-family: "Roboto", sans-serif;
-  margin: 0;
+  margin: auto;
+  max-width: 90%;
 }
 
 /* HEADER */
@@ -23,13 +24,22 @@ body {
   background-color: #eaeaea;
   text-align: center;
   font-weight: bold;
-  color: grey;
 }
 .header__banniere {
   background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  border-radius: 50px;
   background-size: 100% auto;
   object-fit: cover;
   height: 650px;
+}
+.header__banniere--enchantee {
+  background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+.header__banniere--delice {
+  background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+.header__banniere--palette {
+  background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
 }
 .header a {
   margin-top: -50px;
@@ -38,7 +48,6 @@ body {
 .fa-location-dot {
   position: relative;
   right: 300px;
-  color: grey;
 }
 
 /*DESCRIPTION*/
@@ -65,6 +74,14 @@ body {
   border-radius: 50px;
   padding: 10px 20px 10px 20px;
   cursor: pointer;
+}
+.description__text--button:hover {
+  background: #e987e0;
+}
+.description__explorer--menu {
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 50px;
 }
 
 /*SECTION FONCTIONNEMENT*/
@@ -128,6 +145,11 @@ body {
 .restaurants {
   background-color: #f6f6f6;
   padding-top: 50px;
+  padding-bottom: 100px;
+}
+.restaurants a {
+  text-decoration: none;
+  color: black;
 }
 .restaurants__title {
   font-size: 2em;
@@ -168,12 +190,44 @@ body {
 
 .heart {
   font-size: 2em;
+  cursor: pointer;
   padding-top: 15px;
+}
+.heart:hover {
+  display: none;
+}
+.heart:hover + .heart__degrade {
+  padding-top: 15px;
+  display: block;
+}
+.heart:hover + .heart__degrade .fa-heart {
+  animation-duration: 1s;
+  font-size: 2em;
+  color: #a15adc;
+}
+
+.fa-heart {
+  color: black;
+}
+
+.heart__degrade {
+  display: none;
+}
+
+.nouveau {
+  margin-top: -250px;
+  margin-left: 300px;
+  background-color: #99e2d0;
+  position: absolute;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  color: #008766;
 }
 
 /*FOOTER*/
 footer {
   background-color: #353535;
+  border-radius: 0px 0px 50px 50px;
   height: auto;
 }
 
@@ -211,19 +265,21 @@ footer {
 /* PAGE MENU */
 .menu {
   background-color: #f6f6f6;
-  padding-top: 125px;
-  border-radius: 75px 75px 0px 0px;
+  padding-top: 20px;
 }
 .menu__title {
   padding-top: 25px;
   padding-left: 15px;
   font-size: 1.5em;
+  text-align: center;
 }
 .menu__choix {
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-left: 150px;
+  max-width: 90%;
+  margin-left: 60px;
 }
 
 .soulignement {
@@ -237,8 +293,8 @@ footer {
   animation-delay: 0s;
   background-color: white;
   border-radius: 20px;
-  width: 400px;
-  height: 100px;
+  width: 440px;
+  max-height: 250px;
   padding-left: 15px;
   padding-right: 25px;
   cursor: pointer;
@@ -251,25 +307,31 @@ footer {
   visibility: hidden;
   animation-delay: 1s;
 }
+.plat__quatre {
+  visibility: hidden;
+  animation-delay: 1.5s;
+}
 .plat__title {
   font-weight: bold;
   padding-bottom: 15px;
   padding-top: 10px;
+  text-overflow: ellipsis;
 }
 .plat:hover {
-  width: 325px;
+  width: 300px;
   border-radius: 20px 0px 0px 20px;
   margin-right: 0px;
-  transition: 0.5s;
-}
-.plat:hover + .valider {
-  width: 100px;
   transition: 0.5s;
 }
 .plat__descriptif {
   display: flex;
   justify-content: space-between;
   margin-top: -15px;
+  overflow: hidden;
+}
+.plat__descriptif__precisions p {
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .plat__descriptif__tarif {
   font-weight: bold;
@@ -284,11 +346,29 @@ footer {
   animation-name: fadeInFromNone;
   animation-fill-mode: forwards;
 }
+.contain:hover + .check {
+  visibility: visible;
+  transition: 0.5s;
+  margin-left: -140px;
+  display: block;
+  text-align: left;
+  margin-top: 30px;
+}
+.contain:hover + .check .fa-circle-check {
+  animation: rotate 0.5s;
+}
 
-.valider {
-  width: 0%;
-  background-color: #99e2d0;
-  animation-timing-function: ease;
+.check {
+  margin-left: -50px;
+  margin-top: 30px;
+  visibility: hidden;
+  font-size: 2em;
+  position: relative;
+  text-align: right;
+}
+
+.fa-circle-check {
+  color: white;
 }
 
 @keyframes fadeInFromNone {
@@ -303,6 +383,11 @@ footer {
     opacity: 1;
   }
 }
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .intitule {
   background-color: #f6f6f6;
   display: flex;
@@ -313,10 +398,17 @@ footer {
 .intitule__nom {
   font-size: 2em;
   font-weight: bold;
-  margin-left: 45px;
+  font-family: "Shrikhand", cursive;
+  margin-left: 25%;
+}
+.intitule__nom--long {
+  margin-left: 35px;
 }
 .intitule__heart {
   margin-left: 30%;
+}
+.intitule__heart--long {
+  margin-left: 15%;
 }
 
 .fa-heart--menu {
@@ -328,12 +420,16 @@ footer {
   font-size: 4em;
   color: black;
   position: relative;
-  top: 100px;
+  top: 70px;
   right: 40%;
 }
 
 /*MIXINS*/
 @media screen and (max-width: 1024px) {
+  body {
+    max-width: 100%;
+  }
+
   .header__logo {
     padding-top: 35px;
     padding-bottom: 25px;
@@ -346,6 +442,10 @@ footer {
     font-size: 3em;
     border-radius: 0px;
     margin-bottom: -50px;
+  }
+
+  .fa-arrow-left {
+    top: 100px;
   }
 
   .fa-location-dot {
@@ -439,6 +539,20 @@ footer {
     padding-top: 35px;
     margin-right: 35px;
   }
+  .heart:hover {
+    display: none;
+  }
+  .heart:hover + .heart__degrade {
+    padding-top: 50px;
+    margin-right: 35px;
+    font-size: 0.8em;
+    display: block;
+  }
+  .heart:hover + .heart__degrade .fa-heart {
+    animation-duration: 1s;
+    font-size: 2em;
+    color: #a15adc;
+  }
 
   .fa-heart {
     font-size: 0.8em;
@@ -466,6 +580,10 @@ footer {
     font-weight: bold;
   }
 
+  footer {
+    border-radius: 0px;
+  }
+
   .classfooter {
     font-size: 2.8em;
   }
@@ -482,6 +600,13 @@ footer {
     margin-bottom: -30px;
   }
 
+  .nouveau {
+    margin-top: -680px;
+    margin-left: 650px;
+    font-size: 0.8em;
+    padding: 15px 25px 15px 25px;
+  }
+
   .fa-handshake-angle, .fa-utensils {
     position: relative;
     padding-top: 40px;
@@ -492,29 +617,41 @@ footer {
   .intitule {
     font-size: 2.5em;
   }
+  .intitule__nom {
+    margin-left: 25px;
+  }
 
   .fa-heart--menu {
     margin-top: 55px;
     font-size: 2em;
+    margin-left: -50px;
   }
 
+  .menu {
+    border-radius: 75px 75px 0px 0px;
+    margin-top: 40px;
+  }
   .menu__title {
     font-size: 3em;
     padding-left: 40px;
-    padding-top: 0px;
+    padding-top: 50px;
+    margin-bottom: -35px;
+    text-align: left;
+    text-overflow: ellipsis;
   }
   .menu__title--soulignement {
     border-bottom: 2px solid #f5edff;
   }
   .menu__choix {
-    padding-left: 40px;
+    padding-left: 0px;
   }
 
   .plat {
-    width: 90%;
-    margin-top: 35px;
-    height: auto;
+    width: 96%;
     font-size: 3em;
+  }
+  .plat p {
+    text-overflow: ellipsis;
   }
   .plat:hover {
     width: 75%;
@@ -522,10 +659,40 @@ footer {
   .plat__descriptif {
     margin-top: -50px;
   }
+  .plat__descriptif p {
+    text-overflow: ellipsis;
+  }
+  .plat__descriptif__precisions {
+    max-width: 70%;
+  }
+  .plat__descriptif__precisions p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 
   .contain {
-    width: 100%;
-    height: 300px;
+    width: 95%;
+    height: 230px;
+    margin-top: 50px;
+  }
+  .contain:hover + .check {
+    visibility: visible;
+    transition: 0.5s;
+    margin-right: 110px;
+    display: block;
+    text-align: left;
+    margin-top: 120px;
+  }
+  .contain:hover + .check .fa-circle-check {
+    animation: rotate 0.5s;
+  }
+
+  .check {
+    margin-top: 120px;
+    visibility: hidden;
+    font-size: 4em;
+    margin-right: 0px;
   }
 }
 
