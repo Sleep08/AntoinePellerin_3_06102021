@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6abcd90101.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
   </head>
 <body>
   <header>  
@@ -18,6 +21,7 @@
       </div>
       <div class="header__recherche">
             <input class="header__barre" type="search" value="Paris, Belleville">
+            <i class="fa-solid fa-location-dot"></i>
       </div>
     </div>
   </header>
@@ -85,7 +89,7 @@
       <div class="restaurants__list">
         <figure class="choix">
           <div class="choix__img">
-            <img src="/Users/stagiaire/Documents/Sites/OhMyFood/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La Palette du goût">
+            <a href="/palette_du_gout.html"><img src="/Users/stagiaire/Documents/Sites/OhMyFood/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La Palette du goût"></a>
           </div>
           <figcaption class="choix__legende">
             <div class="text">
@@ -95,11 +99,15 @@
             <div class="heart">
               <i class="fa-regular fa-heart"></i>
             </div>
+            <div class="heart__degrade">
+              <i class="fa-solid fa-heart"></i>
+            </div>
           </figcaption>
-        </figure>
+          <div class="nouveau">Nouveau</div>
+        </figure></a>
         <figure class="choix">
           <div class="choix__img">
-            <img src="/Users/stagiaire/Documents/Sites/OhMyFood/images/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée">
+            <a href="/la_note_enchantee.html"><img src="/Users/stagiaire/Documents/Sites/OhMyFood/images/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée"></a>
           </div>
           <figcaption class="choix__legende">
             <div class="text">
@@ -109,11 +117,15 @@
             <div class="heart">
               <i class="fa-regular fa-heart"></i>
             </div>
+            <div class="heart__degrade">
+              <i class="fa-solid fa-heart"></i>
+            </div>
           </figcaption>
+          <div class="nouveau">Nouveau</div>
         </figure>
         <figure class="choix">
           <div class="choix__img">
-            <img src="/Users/stagiaire/Documents/Sites/OhMyFood/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="A la française">
+            <a href="/a_la_francaise.html"><img src="/Users/stagiaire/Documents/Sites/OhMyFood/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="A la française"></a>
           </div>
           <figcaption class="choix__legende">
             <div class="text">
@@ -123,11 +135,14 @@
             <div class="heart">
               <i class="fa-regular fa-heart"></i>
             </div>
+            <div class="heart__degrade">
+              <i class="fa-solid fa-heart"></i>
+            </div>
           </figcaption>
         </figure>
         <figure class="choix">
           <div class="choix__img">
-            <img src="/Users/stagiaire/Documents/Sites/OhMyFood/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens">
+            <a href="/delice_des_sens.html"><img src="/Users/stagiaire/Documents/Sites/OhMyFood/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens"></a>
           </div>
           <figcaption class="choix__legende">
             <div class="text">
@@ -136,6 +151,9 @@
             </div>
             <div class="heart">
               <i class="fa-regular fa-heart"></i>
+            </div>
+            <div class="heart__degrade">
+              <i class="fa-solid fa-heart"></i>
             </div>
           </figcaption>
         </figure>
@@ -147,11 +165,11 @@
       <img src="/Users/stagiaire/Documents/Sites/OhMyFood/images/ohmyfood.png" alt="ohmyfood">
     </div>
     <ul class="classfooter__list">
-      <li class="classfooter__list__li">
+      <li class="classfooter__list__li classfooter__list__li--logo">
         <i class="fa-solid fa-utensils"></i>
         <p>Proposer un restaurant</p>
       </li>
-      <li class="classfooter__list__li">
+      <li class="classfooter__list__li classfooter__list__li--logo">
         <i class="fa-solid fa-handshake-angle"></i>
         <p>Devenir partenaire</p>
       </li>
