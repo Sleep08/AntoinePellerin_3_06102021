@@ -1,0 +1,292 @@
+/*MIXINS*/
+
+@media screen and (max-width: 1024px){
+
+    @mixin title-media {
+        font-size: 3.5em;
+    }
+    @mixin description-media {
+        font-size: 2em;
+    }
+
+    @mixin button {
+        margin-top: 50px;
+        margin-bottom: 100px;
+        height: 125px;
+        width: 550px;
+        font-size: 2.5em;
+        @include degrade();
+        color: white;
+        border: none;
+        border-radius: 75px;
+        padding: 10px 20px 10px 20px;
+        cursor: pointer;
+    }
+
+    body{
+        max-width: 100%;
+    }
+    .header{
+        &__logo{
+            padding-top: 35px;
+            padding-bottom: 25px;
+        }
+        &__barre {
+            margin-top: 15px;
+            width: 100%;
+            height: 150px;
+            border: none;
+            font-size: 3em;
+            border-radius: 0px;
+            margin-bottom: -50px;
+        }
+    }
+    .fa-arrow-left{
+        top: 100px;
+    }
+    .fa-location-dot {
+        font-size: 3em;
+        top: -55px;
+    }
+
+    .description{
+        background-color: $main-background;
+        text-align: center;
+        margin-top: -20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        &__title{
+            @include title-media();
+        }
+        &__text{
+            @include description-media();
+            &--button{
+                @include button();
+            }
+        }
+        &__explorer{
+            &--menu{
+                text-align: center;
+                padding-bottom: 150px;
+                padding-top: 50px;
+            }
+        }
+    }
+
+    .fonctionnement{
+        margin-bottom: 100px;
+        &__title{
+            padding-top: 75px;
+            @include title-media();
+        }
+        &__menu{
+            flex-direction: column;
+            align-items: center;
+            margin-left: 15px;
+        }
+    }
+    .explications{
+        width: 90%;
+    }
+    .restaurants {
+        padding-bottom: 150px;
+        &__title{
+            @include title-media();
+            margin-top: 70px;
+        }
+     
+        &__list {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .choix{
+        font-size: 2.8em;
+        width: 90%;
+        height: 700px;
+        border-radius: 0px 0px 50px 50px;
+        img{
+            height: 500px;
+            border-radius: 50px 50px 0px 0px;
+        }
+    }
+    .text{
+        padding-left: 15px;
+        &__titre{
+            font-weight: bold;
+        }
+        &__place{
+            margin-top: -35px;
+        }
+    }
+
+    .heart {
+        padding-top: 35px;
+        margin-right: 35px;
+        &:hover { 
+            display: none;
+        + .heart__degrade {
+            padding-top: 50px;
+            margin-right: 35px;
+            font-size: 00.8em;
+            display: block;
+            .fa-heart{
+                animation-duration: 1s;
+                font-size: 2em;
+                color: $bouton-degrade;
+            }
+        }
+    }
+    }
+    .fa-heart{
+        font-size: 0.8em;
+    }
+    /* FONCTIONNEMENT */
+
+    .explications{
+        font-size: 2.2em;
+        height: 220px;
+        border-radius: 75px;
+        &__numero{
+            width: 65px;
+            height: 60px;
+            margin-top: 70px;
+            padding-top: 15px;
+        }
+        &__logo{
+            margin-top: 80px;
+            margin-left: 30px;
+        }
+        &__text{
+            margin-top: 80px;
+            margin-left: 45px;
+            font-weight: bold;
+        }
+    }
+
+    footer{
+        border-radius: 0px;
+    }
+    
+    .classfooter{
+        font-size: 2.8em;
+        img {
+            padding-top: 40px;
+            width: 320px;
+            height: 50px;
+        }
+        &__list{
+            padding-bottom: 50px;
+            &__li{
+                &--logo{
+                    margin-bottom: -30px;
+                }
+                &--utensils{
+                    margin-bottom: -75px;
+                }
+            }
+        }
+    }
+
+    .nouveau{
+        margin-top: -680px;
+        margin-left: 650px;
+        font-size: 0.8em;
+        padding: 15px 25px 15px 25px;
+    }
+    
+    .fa-handshake-angle, .fa-utensils{
+        position: relative;
+        padding-top: 40px;
+        padding-right: 25px;
+    }
+
+    /* PAGE MENU */
+
+    .intitule{
+        font-size: 2.5em;
+        &__nom{
+            margin-left: 25px;
+        }
+    }
+
+    .fa-heart--menu{
+        margin-top: 55px;
+        font-size: 2em;
+        margin-left: -50px;
+    }
+
+    .menu {
+        border-radius: 75px 75px 0px 0px;
+        margin-top: 40px;
+        &__title{
+            font-size: 3em;
+            padding-left: 40px;
+            padding-top: 50px;
+            margin-bottom: -35px;
+            text-align: left;
+            text-overflow: ellipsis;
+            &--soulignement{
+                border-bottom: 2px solid $deguster-background;
+            }
+        }
+        &__choix{
+            padding-left: 0px;
+        }
+    }
+    .plat{
+        width: 96%;
+        font-size: 3em;
+        p {
+            text-overflow: ellipsis;
+        }
+        &:hover{
+            width: 75%;
+        }
+        &__descriptif{
+            margin-top: -50px;
+            p{
+                text-overflow: ellipsis;
+            }
+            &__precisions{
+                max-width: 70%;
+                p{
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+    .contain{
+        width: 95%;
+        height: 230px;
+        margin-top: 50px;
+        &:hover + .check{
+            visibility: visible;
+            transition: 0.5s;
+            margin-right: 110px;
+            display: block;
+            text-align: left;
+            margin-top: 120px;
+            .fa-circle-check{
+                animation: rotate 0.5s;
+                }
+        }
+    }
+
+    .check{
+        margin-top: 120px;
+        visibility: hidden;
+        font-size: 4em;
+        margin-right: 0px;
+    }
+}
+
+.loader{
+    width: 100%;
+    &__icon{
+        margin-left: 42%;
+        top: 40%;
+    }
+}
