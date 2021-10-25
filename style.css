@@ -201,7 +201,6 @@ body {
   display: block;
 }
 .heart:hover + .heart__degrade .fa-heart {
-  animation-duration: 1s;
   font-size: 2em;
   color: #a15adc;
 }
@@ -214,6 +213,14 @@ body {
   display: none;
 }
 
+@keyframes heart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .nouveau {
   margin-top: -250px;
   margin-left: 300px;
@@ -229,6 +236,7 @@ footer {
   background-color: #353535;
   border-radius: 0px 0px 50px 50px;
   height: auto;
+  padding-bottom: 10px;
 }
 
 .classfooter {
@@ -251,8 +259,16 @@ footer {
   display: flex;
   justify-content: flex-start;
 }
+.classfooter__list__li a {
+  text-decoration: none;
+  color: white;
+}
 .classfooter__list__li--logo {
   margin-bottom: -15px;
+  padding-top: -15px;
+}
+.classfooter__list__li--utensils {
+  margin-bottom: -30px;
   padding-top: -15px;
 }
 
@@ -424,6 +440,48 @@ footer {
   right: 40%;
 }
 
+.loader {
+  text-align: center;
+  width: 90%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  animation: charging 6s;
+  animation-fill-mode: forwards;
+  z-index: inherit;
+}
+.loader__icon {
+  position: relative;
+  margin-left: 50%;
+  top: 280px;
+  width: 100px;
+  height: 100px;
+  border: 20px solid #CCCCCC;
+  border-top: 20px solid #a15adc;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes charging {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
 /*MIXINS*/
 @media screen and (max-width: 1024px) {
   body {
@@ -594,10 +652,12 @@ footer {
   }
   .classfooter__list {
     padding-bottom: 50px;
-    margin-bottom: -50px;
   }
   .classfooter__list__li--logo {
     margin-bottom: -30px;
+  }
+  .classfooter__list__li--utensils {
+    margin-bottom: -75px;
   }
 
   .nouveau {
@@ -694,6 +754,13 @@ footer {
     font-size: 4em;
     margin-right: 0px;
   }
+}
+.loader {
+  width: 100%;
+}
+.loader__icon {
+  margin-left: 42%;
+  top: 40%;
 }
 
 /*# sourceMappingURL=style.css.map */
