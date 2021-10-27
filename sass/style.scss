@@ -30,8 +30,10 @@ $apparition-menu: #99e2d0;
     border-radius: 50px;
     padding: 10px 20px 10px 20px;
     cursor: pointer;
+    box-shadow: 4px 5px 5px rgb(165, 165, 165);
     &:hover{
         background: lighten($bouton-basic, 5%);
+        box-shadow: 12px 5px 5px rgb(165, 165, 165);
     }
 }
 
@@ -39,7 +41,7 @@ $apparition-menu: #99e2d0;
 body{
     font-family: 'Roboto', sans-serif;
     margin: auto;
-    max-width: 90%;
+    width: 90%;
 }
 
 /* HEADER */
@@ -53,7 +55,7 @@ body{
     &__barre{
         width: 400px;
         height: 45px;
-        border: 2px solid grey;
+        border: 2px solid rgb(165, 165, 165);
         border-radius: 40px;
         background-color: $font-naviguation;
         text-align: center;
@@ -192,6 +194,7 @@ body{
     width: 400px;
     background-color: white;
     border-radius: 20px;
+    box-shadow: 4px 5px 5px rgb(165, 165, 165);
     &__img img{
         object-fit: cover;
         width: 100%;
@@ -225,9 +228,11 @@ body{
             padding-top: 15px;
             display: block;
             .fa-heart{
-                animation-duration: 1s;
                 font-size: 2em;
-                color: $bouton-degrade;
+                -webkit-text-fill-color: transparent;
+                background: linear-gradient(170deg, rgba(255, 121, 218, 1) 20%, rgba(147, 86, 220, 1) 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
             }
         }
     }
@@ -239,6 +244,15 @@ body{
 
 .heart__degrade{
     display: none;
+}
+
+@keyframes heart {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 .nouveau{
@@ -257,6 +271,7 @@ footer{
     background-color: $footer-background;
     border-radius: 0px 0px 50px 50px;
     height: auto;
+    padding-bottom: 10px;
 }
 
 .classfooter{
@@ -276,9 +291,15 @@ footer{
         &__li{
             display: flex;
             justify-content: flex-start;
+            a{
+                text-decoration: none;
+                color: white;
+            }
             &--logo{
                 margin-bottom: -15px;
-                padding-top: -15px;
+            }
+            &--utensils{
+                margin-bottom: -30px;
             }
         }
     }
@@ -319,7 +340,7 @@ footer{
     animation-duration: 3s;
     animation-name: fadeInFromNone;
     animation-fill-mode: forwards;
-    animation-delay: 0s;
+    animation-delay: 0.5s;
     background-color: white;
     border-radius: 20px;
     width: 440px;
@@ -327,17 +348,18 @@ footer{
     padding-left: 15px;
     padding-right: 25px;
     cursor: pointer;
+    box-shadow: 4px 5px 5px rgb(165, 165, 165);
     &__deux{
         visibility: hidden;
-        animation-delay: 0.5s;
+        animation-delay: 1.5s;
     }
     &__trois{
         visibility: hidden;
-        animation-delay: 1s;
+        animation-delay: 2.5s;
     }
     &__quatre{
         visibility: hidden;
-        animation-delay: 1.5s;
+        animation-delay: 3.5s;
     }
     &__title{
         font-weight: bold;
@@ -346,7 +368,7 @@ footer{
         text-overflow: ellipsis;
     }
     &:hover{
-        width: 300px;
+        width: 325px;
         border-radius: 20px 0px 0px 20px;
         margin-right: 0px;
         transition: 0.5s;
@@ -360,46 +382,56 @@ footer{
             p{
                 text-overflow: ellipsis;
                 overflow: hidden;
+                white-space: nowrap;
             }
+        }
         }
         &__tarif{
             font-weight: bold;
         }
 
     }
-}
+
 
 .contain{
     width: 440px;
     height: 100px;
     border-radius: 20px;
-    background-color: $apparition-menu;
     animation-duration: 3s;
+    animation-delay: 15s;
     animation-name: fadeInFromNone;
     animation-fill-mode: forwards;
     &:hover + .check{
         visibility: visible;
         transition: 0.5s;
-        margin-left: -140px;
+        margin-left: -120px;
+        width: 80px;
+        max-height: auto;
         display: block;
         text-align: left;
-        margin-top: 30px;
+        box-shadow: 4px 5px 5px rgb(165, 165, 165);
+        padding-left: 35px;
         .fa-circle-check{
-        animation: rotate 0.5s;
+        animation: rotate 1s;
+        margin-top: 18px;
         }
     }
 }
 
 .check{
-    margin-left: -50px;
-    margin-top: 30px;
+    background-color: $apparition-menu;
+    height: 79px;
+    width: 0px;
     visibility: hidden;
     font-size: 2em;
     position: relative;
     text-align: right;
+    border-radius: 0px 20px 20px 0px;
+    padding-top: 18px
     }
 
 .fa-circle-check{
+    margin-top: 20px;
     color: white;
 }
 
@@ -455,6 +487,46 @@ footer{
     position: relative;
     top: 70px;
     right: 40%;
+}
+
+.loader{
+    text-align: center;
+    width: 90%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    animation: charging 6s;
+    animation-fill-mode: forwards;
+    z-index: inherit;
+    &__icon{
+        position: relative;
+        margin-left: 50%;
+        top: 280px;
+        width: 100px;
+        height: 100px;
+        border: 20px solid #CCCCCC;
+        border-top: 20px solid $bouton-degrade;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+@keyframes charging {
+    0% {
+        opacity: 1;
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
 }
 
 @import 'media_queries';
