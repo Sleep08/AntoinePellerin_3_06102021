@@ -4,7 +4,7 @@
 body {
   font-family: "Roboto", sans-serif;
   margin: auto;
-  max-width: 90%;
+  width: 90%;
 }
 
 /* HEADER */
@@ -499,7 +499,7 @@ footer {
 /*MIXINS*/
 @media screen and (max-width: 1024px) {
   body {
-    max-width: 100%;
+    width: 100%;
   }
 
   .header__logo {
@@ -723,6 +723,7 @@ footer {
   .plat {
     width: 96%;
     font-size: 3em;
+    border-radius: 50px;
   }
   .plat p {
     text-overflow: ellipsis;
@@ -772,6 +773,7 @@ footer {
     margin-top: 50px;
     margin-right: 0px;
     margin-left: -100px;
+    border-radius: 0px 50px 50px 0px;
   }
 }
 .loader {
