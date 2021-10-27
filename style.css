@@ -19,7 +19,7 @@ body {
 .header__barre {
   width: 400px;
   height: 45px;
-  border: 2px solid grey;
+  border: 2px solid #a5a5a5;
   border-radius: 40px;
   background-color: #eaeaea;
   text-align: center;
@@ -74,9 +74,11 @@ body {
   border-radius: 50px;
   padding: 10px 20px 10px 20px;
   cursor: pointer;
+  box-shadow: 4px 5px 5px #a5a5a5;
 }
 .description__text--button:hover {
   background: #e987e0;
+  box-shadow: 12px 5px 5px #a5a5a5;
 }
 .description__explorer--menu {
   text-align: center;
@@ -167,6 +169,7 @@ body {
   width: 400px;
   background-color: white;
   border-radius: 20px;
+  box-shadow: 4px 5px 5px #a5a5a5;
 }
 .choix__img img {
   object-fit: cover;
@@ -202,7 +205,10 @@ body {
 }
 .heart:hover + .heart__degrade .fa-heart {
   font-size: 2em;
-  color: #a15adc;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(170deg, #ff79da 20%, #9356dc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .fa-heart {
@@ -304,7 +310,7 @@ footer {
   animation-duration: 3s;
   animation-name: fadeInFromNone;
   animation-fill-mode: forwards;
-  animation-delay: 0s;
+  animation-delay: 0.5s;
   background-color: white;
   border-radius: 20px;
   width: 440px;
@@ -312,18 +318,19 @@ footer {
   padding-left: 15px;
   padding-right: 25px;
   cursor: pointer;
+  box-shadow: 4px 5px 5px #a5a5a5;
 }
 .plat__deux {
   visibility: hidden;
-  animation-delay: 0.5s;
+  animation-delay: 1.5s;
 }
 .plat__trois {
   visibility: hidden;
-  animation-delay: 1s;
+  animation-delay: 2.5s;
 }
 .plat__quatre {
   visibility: hidden;
-  animation-delay: 1.5s;
+  animation-delay: 3.5s;
 }
 .plat__title {
   font-weight: bold;
@@ -332,7 +339,7 @@ footer {
   text-overflow: ellipsis;
 }
 .plat:hover {
-  width: 300px;
+  width: 325px;
   border-radius: 20px 0px 0px 20px;
   margin-right: 0px;
   transition: 0.5s;
@@ -346,8 +353,9 @@ footer {
 .plat__descriptif__precisions p {
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
 }
-.plat__descriptif__tarif {
+.plat__tarif {
   font-weight: bold;
 }
 
@@ -355,33 +363,41 @@ footer {
   width: 440px;
   height: 100px;
   border-radius: 20px;
-  background-color: #99e2d0;
   animation-duration: 3s;
+  animation-delay: 15s;
   animation-name: fadeInFromNone;
   animation-fill-mode: forwards;
 }
 .contain:hover + .check {
   visibility: visible;
   transition: 0.5s;
-  margin-left: -140px;
+  margin-left: -120px;
+  width: 80px;
+  max-height: auto;
   display: block;
   text-align: left;
-  margin-top: 30px;
+  box-shadow: 4px 5px 5px #a5a5a5;
+  padding-left: 35px;
 }
 .contain:hover + .check .fa-circle-check {
-  animation: rotate 0.5s;
+  animation: rotate 1s;
+  margin-top: 18px;
 }
 
 .check {
-  margin-left: -50px;
-  margin-top: 30px;
+  background-color: #99e2d0;
+  height: 79px;
+  width: 0px;
   visibility: hidden;
   font-size: 2em;
   position: relative;
   text-align: right;
+  border-radius: 0px 20px 20px 0px;
+  padding-top: 18px;
 }
 
 .fa-circle-check {
+  margin-top: 20px;
   color: white;
 }
 
@@ -712,7 +728,7 @@ footer {
     text-overflow: ellipsis;
   }
   .plat:hover {
-    width: 75%;
+    width: 74%;
   }
   .plat__descriptif {
     margin-top: -50px;
@@ -730,27 +746,32 @@ footer {
   }
 
   .contain {
-    width: 95%;
-    height: 230px;
+    width: 100%;
+    height: 280px;
     margin-top: 50px;
   }
   .contain:hover + .check {
     visibility: visible;
+    width: 15%;
     transition: 0.5s;
-    margin-right: 110px;
     display: block;
     text-align: left;
-    margin-top: 120px;
+    margin-left: -300px;
+    padding-left: 70px;
   }
   .contain:hover + .check .fa-circle-check {
-    animation: rotate 0.5s;
+    margin-top: 75px;
+    animation: rotate 1s;
   }
 
   .check {
-    margin-top: 120px;
     visibility: hidden;
     font-size: 4em;
+    width: 0%;
+    height: 215px;
+    margin-top: 50px;
     margin-right: 0px;
+    margin-left: -100px;
   }
 }
 .loader {
