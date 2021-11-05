@@ -26,20 +26,20 @@ body {
   font-weight: bold;
 }
 .header__banniere {
-  background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-image: url("https://zupimages.net/up/21/31/oomv.jpg");
   border-radius: 50px;
   background-size: 100% auto;
   object-fit: cover;
   height: 650px;
 }
 .header__banniere--enchantee {
-  background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/stil-u2Lp8tXIcjw-unsplash.jpg");
+  background-image: url("https://zupimages.net/up/21/31/viym.jpg");
 }
 .header__banniere--delice {
-  background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  background-image: url("https://zupimages.net/up/21/31/db8m.jpg");
 }
 .header__banniere--palette {
-  background-image: url("/Users/stagiaire/Documents/Sites/OhMyFood/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-image: url("https://zupimages.net/up/21/31/1oih.jpg");
 }
 .header a {
   margin-top: -50px;
@@ -339,10 +339,25 @@ footer {
   text-overflow: ellipsis;
 }
 .plat:hover {
-  width: 325px;
+  width: 310px;
   border-radius: 20px 0px 0px 20px;
   margin-right: 0px;
   transition: 0.5s;
+}
+.plat:hover + .check {
+  visibility: visible;
+  transition: 0.5s;
+  width: 80px;
+  max-height: auto;
+  display: block;
+  text-align: left;
+  box-shadow: 4px 5px 5px #a5a5a5;
+  padding-left: 35px;
+}
+.plat:hover + .check .fa-circle-check {
+  visibility: visible;
+  animation: rotate 1s;
+  margin-top: 18px;
 }
 .plat__descriptif {
   display: flex;
@@ -360,6 +375,8 @@ footer {
 }
 
 .contain {
+  margin-top: 25px;
+  display: flex;
   width: 440px;
   height: 100px;
   border-radius: 20px;
@@ -368,27 +385,12 @@ footer {
   animation-name: fadeInFromNone;
   animation-fill-mode: forwards;
 }
-.contain:hover + .check {
-  visibility: visible;
-  transition: 0.5s;
-  margin-left: -120px;
-  width: 80px;
-  max-height: auto;
-  display: block;
-  text-align: left;
-  box-shadow: 4px 5px 5px #a5a5a5;
-  padding-left: 35px;
-}
-.contain:hover + .check .fa-circle-check {
-  animation: rotate 1s;
-  margin-top: 18px;
-}
 
 .check {
   background-color: #99e2d0;
-  height: 79px;
+  height: 82px;
   width: 0px;
-  visibility: hidden;
+  visibility: visible;
   font-size: 2em;
   position: relative;
   text-align: right;
@@ -397,6 +399,7 @@ footer {
 }
 
 .fa-circle-check {
+  visibility: hidden;
   margin-top: 20px;
   color: white;
 }
@@ -455,8 +458,9 @@ footer {
 }
 
 .loader {
-  text-align: center;
-  width: 90%;
+  text-align: left;
+  margin-left: -70px;
+  width: 100%;
   height: 100%;
   background-color: white;
   position: absolute;
@@ -465,8 +469,8 @@ footer {
   z-index: inherit;
 }
 .loader__icon {
+  text-align: center;
   position: relative;
-  margin-left: 50%;
   top: 280px;
   width: 100px;
   height: 100px;
@@ -500,6 +504,8 @@ footer {
 @media screen and (max-width: 1024px) {
   body {
     width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .header__logo {
@@ -731,6 +737,19 @@ footer {
   .plat:hover {
     width: 74%;
   }
+  .plat:hover + .check {
+    visibility: visible;
+    width: 15%;
+    transition: 0.5s;
+    display: block;
+    text-align: left;
+    padding-left: 70px;
+  }
+  .plat:hover + .check .fa-circle-check {
+    visibility: visible;
+    margin-top: 75px;
+    animation: rotate 1s;
+  }
   .plat__descriptif {
     margin-top: -50px;
   }
@@ -751,31 +770,20 @@ footer {
     height: 280px;
     margin-top: 50px;
   }
-  .contain:hover + .check {
-    visibility: visible;
-    width: 15%;
-    transition: 0.5s;
-    display: block;
-    text-align: left;
-    margin-left: -300px;
-    padding-left: 70px;
-  }
-  .contain:hover + .check .fa-circle-check {
-    margin-top: 75px;
-    animation: rotate 1s;
-  }
 
   .check {
     visibility: hidden;
     font-size: 4em;
     width: 0%;
-    height: 215px;
-    margin-top: 50px;
+    height: 230px;
     margin-right: 0px;
-    margin-left: -100px;
     border-radius: 0px 50px 50px 0px;
   }
 }
+.fa-circle-check {
+  visibility: hidden;
+}
+
 .loader {
   width: 100%;
 }
