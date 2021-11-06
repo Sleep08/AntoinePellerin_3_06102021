@@ -348,7 +348,6 @@ footer {
   visibility: visible;
   transition: 0.5s;
   width: 80px;
-  max-height: auto;
   display: block;
   text-align: left;
   box-shadow: 4px 5px 5px #a5a5a5;
