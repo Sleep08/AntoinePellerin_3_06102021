@@ -228,8 +228,8 @@ body {
   }
 }
 .nouveau {
-  margin-top: -250px;
-  margin-left: 300px;
+  margin-top: -180px;
+  margin-left: 280px;
   background-color: #99e2d0;
   position: absolute;
   padding: 5px 10px 5px 10px;
@@ -348,6 +348,7 @@ footer {
   visibility: visible;
   transition: 0.5s;
   width: 80px;
+  max-height: auto;
   display: block;
   text-align: left;
   box-shadow: 4px 5px 5px #a5a5a5;
@@ -459,7 +460,7 @@ footer {
 .loader {
   text-align: left;
   margin-left: -70px;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   background-color: white;
   position: absolute;
@@ -502,7 +503,7 @@ footer {
 /*MIXINS*/
 @media screen and (max-width: 1024px) {
   body {
-    width: 100%;
+    width: 115%;
     margin: 0;
     padding: 0;
   }
@@ -680,8 +681,8 @@ footer {
   }
 
   .nouveau {
-    margin-top: -680px;
-    margin-left: 650px;
+    margin-top: -440px;
+    margin-left: 740px;
     font-size: 0.8em;
     padding: 15px 25px 15px 25px;
   }
@@ -787,8 +788,8 @@ footer {
   width: 100%;
 }
 .loader__icon {
-  margin-left: 42%;
-  top: 40%;
+  margin-left: 45%;
+  top: 45%;
 }
 
 /*# sourceMappingURL=style.css.map */
