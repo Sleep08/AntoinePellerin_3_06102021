@@ -256,8 +256,8 @@ body{
 }
 
 .nouveau{
-    margin-top: -250px;
-    margin-left: 300px;
+    margin-top: -180px;
+    margin-left: 280px;
     background-color: $apparition-menu;
     position: absolute;
     padding: 5px 10px 5px 10px;
@@ -495,7 +495,7 @@ footer{
 .loader{
     text-align: left;
     margin-left: -70px;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     background-color: white;
     position: absolute;
